@@ -1,0 +1,137 @@
+git --version   #shoows the version
+
+#configure
+git config --global user.name "Name"
+git config --global user.email "Email-ID"
+
+#show config
+git config user.email
+git config user.name
+
+#edit config
+git config --global --edit
+
+#initializes current dir as git repo
+git init
+
+#Status of Directory(Local Repo)
+git status
+
+
+# First track the file then commit
+                            |-----------------|
+                      |-----|   Working DIR   |<--------------------------------------------------------|
+                      |     |-----------------|                                                         |
+                      |                                                                                 |    
+              [git add file.ext]      #adds file in staging area, use . to add all files of dir         |
+                      |                                                                                 |
+                      |     |-----------------|                                                 [git reset file.txt]        #Undo Staging
+                      |---->|   Staging Area  |-----|---------------------------------------------------|
+                            |-----------------|     |
+                                                    |
+                                         [git commit -m "Message of commit"]          #commit the changes in git repo
+                                                    |
+                            |-----------------|     |
+                            |   Repository    |<----|
+                            |-----------------|
+                                    |
+                                    |
+                                    |
+                            [git reset HEAD~1]     #Unstaged/Undo last commit
+                                    OR
+                            [git reset commit-hash]     #Unstaged any changes made to the files after this commit
+                                    OR
+                            [git reset --hard commit-hash]  #Completely back to specified commit version
+                                    |
+                                    |
+                                    |
+                                    V
+                            |-----------------|
+                            |   Working DIR   |
+                            |-----------------|  
+                            
+                            
+#see previous Commits
+git log                            
+
+
+#Navigate from one branch to another
+#updates the file in working dir to match the version stored in the branch, and tell git to record all the new commits on that branch
+git checkout hashcode/branch-name
+        [Note:]
+        hashcode ---- Git switches to "detached head state", 
+        branch-name --- Updates the head to point to specified branch
+        
+
+#Show all branches
+git branch
+
+
+#Create new branch then checkout it
+git branch branch-name      
+git checkout branch-name    
+        
+        OR
+        
+git checkout -b branch-name
+
+
+#Merge branch 
+git merge [branch-name-to-be-merged-in-current-branch]
+
+#".gitignore" File
+
+
+
+#Push an existing file from cmd
+    git remote -v   //shows the origin to fetch and push
+
+    #add remote origin-name
+    git remote add <origin-name> <link>
+    git branch -M branch-name 
+    git push -u <origin-name> branch-name   // -u sets the upstreams so we don't need to write origin-name and branch-name each time
+    
+    ///it may ask for userName and Password for first time
+    
+
+#Collaborate 
+Manage access in gitHub
+
+#Open source Contribution [fork,pull request etc]
+First "fork" into your account
+Git clone locally
+Edit,commit in your branch
+Contribute ---> Open Pull request --> Create Pull Request
+
+
+# Accept Pull Request
+Review Pull request
+Merge 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
